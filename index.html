@@ -2,72 +2,14 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <script src ="./script.js" defer></script>
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <script>
-    
-    function computerPlay(){
-        let rps = ['Rock', 'Paper', 'Scissor'];
-        return rps[Math.floor(Math.random()*rps.length)];
-    }
-
-    function playerSelection(){
-        userSelection = prompt('Select Rock, Paper, or Scissor: ').toLowerCase();
-        if (userSelection === 'rock'){
-            return userSelection.charAt(0).toUpperCase() + userSelection.slice(1);
-        }
-        else if (userSelection === 'paper'){
-            return userSelection.charAt(0).toUpperCase() + userSelection.slice(1);
-        }
-        else if (userSelection === 'scissor'){
-            return userSelection.charAt(0).toUpperCase() + userSelection.slice(1);
-        }
-        else{
-            alert('That is not a valid choice.');
-            playerSelection() 
-        }
-    }
-    function playRound(userChoice, compChoice){
-        if((userChoice === 'Rock') && (compChoice === 'Scissor')){
-            return 'You Win!';
-        }
-        else if ((userChoice === 'Paper') && (compChoice === 'Rock')){
-            return 'You Win!';
-        }
-        else if ((userChoice === 'Scissor') && (compChoice === 'Rock')){
-            return 'You Win!'
-        }
-        else if( userChoice === compChoice){
-            return("It's a tie!");
-        }
-        else{
-            return ('You Lose!');
-        }
-    }
-
-    function game(){
-        playerWins = 0;
-        computerWins = 0;
-        for (let i = 0; i<5;){
-            results = playRound(playerSelection(), computerPlay());
-            if (results === 'You Win!'){
-                i++
-                playerWins++;
-                if (playerWins === 3){
-                    alert('You demolished the AI!');
-                }
-            }
-            else if(results === 'You Lose!'){
-                i++
-                computerWins++;
-                if(computerWins === 3){
-                    alert('AI Rules - the fate of humanity is doomed!');
-                }
-            }
-            }
-        }
-    console.log(game());
-  </script>
+    <div class="container">
+        <button class="Rock">Rock</button>
+        <button class="Paper">Paper</button>
+        <button class="Scissor">Scissor</button>
+    </div>
 </body>
 </html>
